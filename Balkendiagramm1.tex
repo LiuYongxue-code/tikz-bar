@@ -1,0 +1,59 @@
+\documentclass[a4paper]{scrreprt}
+\usepackage{ctex}
+\usepackage[margin=8mm]{geometry}
+\usepackage{selinput}
+%\SelectInputMappings{adieresis={ä}, germandbls={ß}}
+\usepackage[ngerman]{babel}
+
+\usepackage{xcolor}
+\pagecolor{lightgray!15}
+%=================================
+\usepackage{listings}
+\renewcommand{\lstlistlistingname}{Codeverzeichnis}
+\renewcommand{\lstlistingname}{Quellcode}
+% \lstset{caption=\lstname}
+
+% Globale Einstellungen
+\lstdefinestyle{latex}{
+language=[AlLaTeX]TeX,
+frame=single,
+backgroundcolor=\color{yellow!30},
+rulecolor=\color{lightgray!40},
+breaklines=true,
+% xleftmargin=\parindent,
+basicstyle=\footnotesize\ttfamily,
+keywordstyle=\bfseries\color{black!70!purple},
+commentstyle=\itshape\color{green!40!black},
+identifierstyle=\color{blue},
+stringstyle=\color{orange},
+}
+%=================================
+% Globale Einstellungen
+\usepackage{accsupp}
+%% Nummern nicht auswählbar machen
+\newcommand{\noncopynumber}[1]{ \BeginAccSupp{method=escape,ActualText={}}
+#1
+\EndAccSupp{}}%
+%%
+
+\lstset {numberstyle=\tiny\color{gray!90!black}\noncopynumber,
+numbers=left,
+numbersep=1.5pt,
+% stepnumber=2,
+columns=flexible,
+%literate={ä}{{\"a}}1{ö}{{\"o}}1 {ü}{{\"u}}1{ß}{{\ss}}1,
+%captionpos=b, % t op, b ottom
+title=\bfseries %TUT NICHT!!!
+}
+%=================================
+
+\begin{document}
+
+
+All features are as long as they are not really tested called experimental. With the optional argument
+coorType, which is by default 0, one can change the the viewing of the axes and all other three
+dimensional objects.
+
+\lstinputlisting[style=latex, firstline=1]{BalkendiagrammNeu.tex}
+\lstinputlisting[style=latex, firstline=1]{plot1.tex}
+\end{document}
